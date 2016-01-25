@@ -65,7 +65,7 @@ class TicketController extends Controller
     {
         $tickets = Ticket::whereNotNull('operador_id')
             ->where('estado_id', 2)->orderBy('id', 'desc')->get();
-        return view('generic.tickets_admin', ['rows' => $tickets, 'title' => 'Tickets asignados por operador',]);
+        return view('generic.tickets_asigned', ['rows' => $tickets, 'title' => 'Tickets asignados por operador',]);
     }
 
     /**
